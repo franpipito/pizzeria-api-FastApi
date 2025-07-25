@@ -1,18 +1,16 @@
 from fastapi import APIRouter
-from models import producto 
+from app.models.producto import Producto
 
 
-router = APIRouter(prefix = "/api/productos", tags =["productos"])
+router = APIRouter(prefix = "/productos", tags =["productos"])
 
-listaProductos = []
-contador_Id = 1
+lista_productos = [
+    {"id": 1, "nombre": "Muzzarella"},
+    {"id": 2, "nombre": "Napolitana"},
+    {"id": 3, "nombre": "Provolone"}
+]
 
 
 @router.get("/")
 def listar_productos(): 
-    return listaProductos
-    
-    
-
-def crear_productos(ProductoCreate):
-    
+    return lista_productos
