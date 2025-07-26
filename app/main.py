@@ -3,7 +3,7 @@ from app.routers import productos
 
 app = FastAPI()
 
-app.include_router(productos.router, prefix="/api")
+app.include_router(productos.router)
 
 @app.get("/ping")
 def ping():
